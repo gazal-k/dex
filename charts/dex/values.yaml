@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   imageRepo: gcr.io/jenkinsxio/dex
-  tag: 2.13.2
+  tag: 2.13.18
   pullPolicy: IfNotPresent
 
 service:
