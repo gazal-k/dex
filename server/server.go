@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/dexidp/dex/connector/cloudbees"
 	"net/http"
 	"net/url"
 	"path"
@@ -442,6 +443,7 @@ var ConnectorsConfig = map[string]func() ConnectorConfig{
 	"github":          func() ConnectorConfig { return new(github.Config) },
 	"gitlab":          func() ConnectorConfig { return new(gitlab.Config) },
 	"oidc":            func() ConnectorConfig { return new(oidc.Config) },
+	"cloudbees":       func() ConnectorConfig { return new(cloudbees.Config) },
 	"saml":            func() ConnectorConfig { return new(saml.Config) },
 	"authproxy":       func() ConnectorConfig { return new(authproxy.Config) },
 	"linkedin":        func() ConnectorConfig { return new(linkedin.Config) },
