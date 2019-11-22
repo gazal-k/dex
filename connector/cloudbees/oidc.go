@@ -215,14 +215,13 @@ func (c *oidcConnector) HandleCallback(s connector.Scopes, r *http.Request) (ide
 		}
 	}
 
+	userId := strings.Split(idToken.Subject, "|")
+
 	identity = connector.Identity{
-		UserID:        idToken.Subject,
-		Username:      claims.Username,
+		UserID:        userId[0],
+		Username:      claims.CloudBees.UserId,
 		Email:         claims.Email,
 		EmailVerified: claims.EmailVerified,
-	}
-	if claims.CloudBees != nil {
-		identity.UserID = fmt.Sprintf("%s|%s", identity.UserID, claims.CloudBees.UserId)
 	}
 	return identity, nil
 }
