@@ -49,7 +49,7 @@ terminationGracePeriodSeconds: 10
 nodeSelector: {}
 
 certs:
-  newApi: false
+  legacyApi: false
   imagePullPolicy: "IfNotPresent"
   grpc:
     create: true

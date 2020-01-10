@@ -1,9 +1,9 @@
 {{- if .Values.certs.grpc.create }}
 {{ $fullname := include "fullname" . }}
-{{- if .Values.certs.newApi }}
-apiVersion: cert-manager.io/v1alpha2
-{{- else }}
+{{- if .Values.certs.legacyApi }}
 apiVersion: certmanager.k8s.io/v1alpha1
+{{- else }}
+apiVersion: cert-manager.io/v1alpha2
 {{- end }}
 kind: Certificate
 metadata:
